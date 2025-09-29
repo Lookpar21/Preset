@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Baccarat Predictor v3.3</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Baccarat Predictor v3.3</h1>
+  <p>คำนวณผลบาคาร่า • รวมแต้ม • Distribution • สต็อก • Monte Carlo • Undo/Redo • Auto-Save</p>
+</header>
+
+<main class="app">
+<section class="card">
+  <div class="grid3">
+    <label>P1<select id="p1"></select></label>
+    <label>P2<select id="p2"></select></label>
+    <label>B1<select id="b1"></select></label>
+    <label>B2<select id="b2"></select></label>
+    <label>P3<select id="p3"></select></label>
+    <label>B3<select id="b3"></select></label>
+  </div>
+  <div class="row">
+    <button id="preset8" class="btn">Preset 8 สำรับ</button>
+    <button id="resetStock" class="btn warn">รีเซ็ตสต็อก</button>
+    <button id="calc" class="btn accent">คำนวณตานี้</button>
+    <button id="apply" class="btn warn">ตัดสต็อก</button>
+    <button id="undo" class="btn">Undo</button>
+    <button id="redo" class="btn">Redo</button>
+  </div>
+  <div id="currentSummary" class="stat"></div>
+  <div class="grid2">
+    <div><h3>P3 Distribution</h3><div id="p3dist"></div></div>
+    <div><h3>B3 Distribution</h3><div id="b3dist"></div></div>
+  </div>
+  <div id="currentOutcome"></div>
+</section>
+
+<section class="card">
+  <h3>สต็อกไพ่คงเหลือ</h3>
+  <div id="stockSummary" class="stat"></div>
+  <div id="stock" class="stock"></div>
+</section>
+
+<section class="card">
+  <div class="row">
+    <h3 style="margin:0;">Monte Carlo ตาถัดไป</h3>
+    <label>จำนวนรอบ <input type="number" id="trials" value="10000" min="2000" step="1000"></label>
+    <button id="simulate" class="btn accent">เริ่มจำลอง</button>
+  </div>
+  <div id="nextOutcome"></div>
+</section>
+</main>
+
+<footer>© v3.3 • ทำงานบนเบราว์เซอร์ • บันทึกอัตโนมัติ</footer>
+<script src="app.js"></script>
+</body>
+</html>
