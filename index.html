@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Baccarat Next Round Predictor</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Baccarat Next Round Predictor</h1>
+  <p>กรอกไพ่ 4 ใบแรกของรอบ จากนั้นกด "คำนวณ" เพื่อดูโอกาสจั่วและผลลัพธ์</p>
+</header>
+<main>
+  <section class="inputs">
+    <label>Player ใบที่ 1:<select id="p1"></select></label>
+    <label>Player ใบที่ 2:<select id="p2"></select></label>
+    <label>Banker ใบที่ 1:<select id="b1"></select></label>
+    <label>Banker ใบที่ 2:<select id="b2"></select></label>
+    <button id="calcBtn">คำนวณรอบนี้</button>
+  </section>
+  <section id="results" class="hidden">
+    <h2>ผลการคำนวณ</h2>
+    <div id="summary"></div>
+    <div id="p3dist"></div>
+    <div id="b3dist"></div>
+    <div id="outcomes"></div>
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
