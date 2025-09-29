@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Baccarat Predictor • Next-Round Advisor (Full)</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Baccarat Predictor • ที่ปรึกษาตาถัดไป (เวอร์ชันเต็ม)</h1>
+  <p class="lead">คำนวณผลตานี้ • ตัดสต็อก • และจำลอง <b>ตาถัดไป</b> ด้วย Monte Carlo (รวม Pair/Natural)</p>
+</header>
+
+<main class="app">
+  <!-- Controls / Inputs -->
+  <section class="card">
+    <div class="row">
+      <button id="preset8" class="btn">Preset 8 สำรับ</button>
+      <button id="saveShoe" class="btn">บันทึกสต็อก</button>
+      <button id="loadShoe" class="btn">โหลดสต็อก</button>
+      <span class="hint">0 = 10/J/Q/K • นับแบบไม่ใส่คืน</span>
+    </div>
+
+    <div class="grid2">
+      <label>Player ใบที่ 1 <select id="p1"></select></label>
+      <label>Player ใบที่ 2 <select id="p2"></select></label>
+      <label>Banker ใบที่ 1 <select id="b1"></select></label>
+      <label>Banker ใบที่ 2 <select id="b2"></select></label>
+    </div>
+
+    <div class="row">
+      <button id="calcRound" class="btn accent">คำนวณตานี้</button>
+      <button id="applyRound" class="btn warn">ตัดสต็อกจากตานี้</button>
+      <label class="inline">ถ้ารู้ไพ่ที่จั่วจริง: P3 <select id="p3opt"></select></label>
+      <label class="inline">B3 <select id="b3opt"></select></label>
+    </div>
+  </section>
+
+  <!-- Stock editor -->
+  <section class="card">
+    <h3>สต็อกไพ่คงเหลือ (แก้ได้)</h3>
+    <div id="stockSummary" class="stat"></div>
+    <div id="stock" class="stock"></div>
+  </section>
+
+  <!-- Current round outputs -->
+  <section class="card" id="currentWrap" style="display:none;">
+    <h3>ผลตานี้</h3>
+    <div id="summary"></div>
+    <div class="grid2">
+      <div>
+        <h4>P3 Distribution</h4>
+        <div id="p3dist"></div>
+      </div>
+      <div>
+        <h4>B3 Distribution</h4>
+        <div id="b3dist"></div>
+      </div>
+    </div>
+    <div id="outcomes"></div>
+  </section>
+
+  <!-- Next round simulation -->
+  <section class="card">
+    <div class="row">
+      <h3 style="margin:0;">จำลองตาถัดไป (Monte Carlo)</h3>
+      <label class="inline">จำนวนรอบ <input id="trials" type="number" min="2000" step="1000" value="10000"></label>
+      <button id="simNext" class="btn accent">เริ่มจำลอง</button>
+    </div>
+    <div id="nextWrap" style="display:none;">
+      <div id="nextSummary"></div>
+      <div id="nextOutcomes"></div>
+    </div>
+  </section>
+</main>
+
+<footer>© Baccarat Next-Round Advisor • คณิตศาสตร์ + Monte Carlo • ทำงานบนเบราว์เซอร์</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
